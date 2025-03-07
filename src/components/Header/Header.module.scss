@@ -1,0 +1,136 @@
+.header_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  padding-left: 320px;
+  @media (max-width: 48em) {
+    padding: 0 12px;
+    flex-direction: column;
+    height: 130px;
+    justify-content: unset;
+  }
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.header_search {
+  gap: 0;
+  display: flex;
+  width: 100%;
+  max-width: 40rem;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  input {
+    border-right: none;
+    padding: 1rem 2rem;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    width: 100%;
+    height: 40px;
+
+    @media (max-width: 850px) {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  input::placeholder {
+    color: rgba(84, 95, 125, 0.4);
+  }
+  .button {
+    width: 56px;
+    padding-inline: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    height: 40px;
+  }
+}
+
+.text {
+  font-weight: var(--font-regular);
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  text-decoration: underline;
+
+  &.user_name {
+    font-weight: var(--font-medium);
+    text-decoration: none;
+  }
+}
+
+.notification_icon {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  @media (min-width: 678px) {
+    display: none;
+  }
+}
+
+.right_section {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+  margin-right: 24px;
+
+  @media (max-width: 678px) {
+    display: none;
+  }
+}
+
+.profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.mobile_header_search {
+  gap: 0;
+  display: flex;
+  width: 100%;
+  max-width: 40rem;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  input {
+    border-right: none;
+    padding: 1rem 2rem;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    width: 100%;
+    height: 40px;
+
+    @media (max-width: 850px) {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  input::placeholder {
+    color: rgba(84, 95, 125, 0.4);
+  }
+  .button {
+    width: 56px;
+    padding-inline: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    height: 40px;
+  }
+}

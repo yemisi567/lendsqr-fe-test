@@ -23,6 +23,7 @@
   --color-black: #0b132b;
   --color-white: #ffffff;
   --font-family: "Manrope", sans-serif;
+  --color-primary-opaque: var(--color-primary-opaque);
 
   --font-light: 300;
   --font-regular: 400;
@@ -59,7 +60,8 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background: rgb(87, 106, 129, 0.6);
-    border-radius: 5px;
+    border-radius: 4px;
   }
   pointer-events: auto !important;
 }
+

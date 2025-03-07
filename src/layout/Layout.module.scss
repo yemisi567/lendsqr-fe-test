@@ -1,0 +1,30 @@
+// styles/global.scss
+.layout_container {
+  display: flex;
+  height: 100vh;
+
+  .sidebar {
+    width: 280px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .header {
+      height: 60px;
+      background-color: #f6f7f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      flex: 1;
+      background-color: #fbfbfb;
+      padding: 20px;
+    }
+  }
+}

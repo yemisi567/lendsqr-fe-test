@@ -23,7 +23,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         60 * 60 * 24 * 7
       }`;
       setIsAuthenticated(true);
-      navigate("/dashboard");
+      navigate("/users");
     } else {
       toast.error("Invalid credentials. Try again", { duration: 2000 });
     }
