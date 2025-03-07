@@ -1,0 +1,39 @@
+.form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+  max-width: 447px;
+  input {
+    padding: 1rem;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 0.5rem;
+    outline: none;
+    height: 50px;
+    width: 100%;
+  }
+
+  .toggle_visibility {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 1.8rem;
+    cursor: pointer;
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      right: 2rem;
+    }
+  }
+
+  .error_message {
+    color: var(--color-danger);
+    font-size: 1.2rem;
+  }
+
+  input::placeholder {
+    color: rgba(84, 95, 125, 0.3);
+  }
+}

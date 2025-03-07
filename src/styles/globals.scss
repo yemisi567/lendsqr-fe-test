@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/AvenirNext-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/AvenirNext-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+//Variables
+:root {
+  --color-primary: #39cdcc;
+  --color-gray: #545f7d;
+  --color-secondary: #213f7d;
+  --color-danger: #e4033b;
+  --color-black: #0b132b;
+  --color-white: #ffffff;
+  --font-family: "Manrope", sans-serif;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --font-family: "Work Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px, for when you have to use rem values
+  height: -webkit-fill-available;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  box-sizing: border-box;
+  line-height: 1.2;
+  font-size: 1rem;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(87, 106, 129, 0.6);
+    border-radius: 5px;
+  }
+  pointer-events: auto !important;
+}

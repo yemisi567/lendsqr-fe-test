@@ -1,0 +1,108 @@
+.main_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .img_wrapper {
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    background-color: #fbfbfb;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 2rem;
+    position: relative;
+
+    @media (max-width: 768px) {
+      background-color: transparent;
+    }
+  }
+
+  .img_container {
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 375px;
+      margin: 0 auto;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 6rem;
+    left: 4rem;
+    max-width: 12rem;
+
+    @media (max-width: 768px) {
+      position: static;
+      margin: 0 auto;
+    }
+  }
+
+  .welcome_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 2rem 5rem 10rem;
+    @media (max-width: 768px) {
+      padding: 2rem 2rem 5rem 2rem;
+    }
+
+    .welcome_container {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      justify-content: center;
+      max-width: 500px;
+
+      @media (max-width: 768px) {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    .text_container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h1 {
+        font-size: 4rem;
+        font-weight: var(--font-bold);
+        color: var(--color-secondary);
+        letter-spacing: -0.2rem;
+        font-family: "Avenir Next", "Work Sans", sans-serif;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: normal;
+        color: var(--color-gray);
+        font-family: "Avenir Next", "Work Sans", sans-serif;
+      }
+    }
+  }
+
+  .form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    max-width: 447px;
+
+    a {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      font-weight: var(--font-semibold);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+  }
+}
