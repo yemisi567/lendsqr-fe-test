@@ -3,6 +3,7 @@ import Header from "../components/Header/Header";
 import styles from "./Layout.module.scss";
 import Sidebar from "../components/Sidebar/SideBar";
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -30,7 +31,11 @@ const Layout = () => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className={styles.main_content}>
         <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={styles.content}>
+        <div
+          className={classNames(styles.content, {
+            [styles.content_full]: !isSidebarOpen,
+          })}
+        >
           <Outlet />
         </div>
       </div>

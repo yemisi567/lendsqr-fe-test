@@ -7,6 +7,7 @@ import App from "./App";
 import "./styles/globals.scss";
 import { Toaster } from "sonner";
 import { AuthProvider } from "./context/Auth/AuthProvider";
+import { UsersProvider } from "./context/Users/UsersProvider";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +16,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Toaster position="top-right" richColors />
       <AuthProvider>
-        <QueryClientProvider client={queryClient}>
-          <App />
-        </QueryClientProvider>
+        <UsersProvider>
+          <QueryClientProvider client={queryClient}>
+            <App />
+          </QueryClientProvider>
+        </UsersProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

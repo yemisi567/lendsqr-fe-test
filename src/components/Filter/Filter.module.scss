@@ -1,0 +1,58 @@
+form {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  flex-direction: column;
+
+  div.input_container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    label {
+      font-size: 1.4rem;
+      color: var(--color-text-secondary);
+      font-weight: var(--font-medium);
+    }
+
+    input,
+    select {
+      padding: 1rem;
+      border: 1px solid #d3d9e5;
+      border-radius: 8px;
+      font-size: 1.4rem;
+      color: var(--color-gray);
+      width: 100%;
+    }
+
+    input::placeholder {
+      color: var(--color-text-secondary);
+      font-weight: 300;
+      font-size: 1.4rem;
+    }
+  }
+  .filter__cta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  button {
+    padding: 1rem 3rem;
+    font-weight: var(--font-medium);
+    font-size: 1.4rem;
+    border-radius: 8px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+
+  button:first-of-type {
+    color: var(--color-gray);
+    border: 1px solid var(--color-gray);
+  }
+
+  button:not(:first-of-type) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}

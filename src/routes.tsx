@@ -17,13 +17,14 @@ const AppRoutes: React.FC = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route
-        path="/*"
+        path="/dashboard"
         element={
           <ProtectedRoute>
             <Layout />
           </ProtectedRoute>
         }
       >
+        <Route index element={<Navigate to="users" />} />
         <Route path="users" element={<Users />} />
         <Route path="user/:id" element={<UserDetail />} />
       </Route>

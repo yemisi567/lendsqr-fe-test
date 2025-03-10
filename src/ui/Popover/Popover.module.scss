@@ -1,0 +1,29 @@
+.popover {
+  background: var(--color-white);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  right: 0.5rem;
+  width: 18rem;
+  z-index: 3;
+  padding: 2rem;
+  position: absolute;
+  box-shadow: 3px 5px 20px #0000000a;
+  letter-spacing: 0.04rem;
+
+  p {
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: var(--font-medium);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+.popover_item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

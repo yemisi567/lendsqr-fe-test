@@ -36,97 +36,165 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
   const { logout } = useAuth();
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    classNames(styles.nav_link, { [styles.active]: isActive });
 
   const handleLogout = () => {
     logout();
   };
-  const menuSections = [
+  const menuSections: {
+    title: string;
+    items: {
+      path: string;
+      Icon: React.FC;
+      text: string;
+      dropdown?: boolean;
+      disabled?: boolean;
+    }[];
+  }[] = [
     {
       title: "",
       items: [
         {
-          path: "/switch-organization",
+          path: "/dashboard/switch-organization",
           Icon: BriefCaseIcon,
           text: "Switch Organization",
           dropdown: true,
+          disabled: true,
         },
-        { path: "/dashboard", Icon: HomeIcon, text: "Dashboard" },
+        {
+          path: "/dashboard/home",
+          Icon: HomeIcon,
+          text: "Dashboard",
+          disabled: true,
+        },
       ],
     },
     {
       title: "CUSTOMERS",
       items: [
-        { path: "/users", Icon: UserFriendsIcon, text: "Users" },
-        { path: "/guarantors", Icon: UserIcon, text: "Guarantors" },
-        { path: "/loans", Icon: SlackIcon, text: "Loans" },
+        { path: "/dashboard/users", Icon: UserFriendsIcon, text: "Users" },
         {
-          path: "/decision-models",
+          path: "/dashboard/guarantors",
+          Icon: UserIcon,
+          text: "Guarantors",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/loans",
+          Icon: SlackIcon,
+          text: "Loans",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/decision-models",
           Icon: HandShakeIcon,
           text: "Decision Models",
+          disabled: true,
         },
-        { path: "/savings", Icon: PiggyBankIcon, text: "Savings" },
-        { path: "/loan-requests", Icon: GroupSlackIcon, text: "Loan Requests" },
-        { path: "/whitelist", Icon: UserCheckIcon, text: "Whitelist" },
-        { path: "/karma", Icon: UserTimesIcon, text: "Karma" },
+        {
+          path: "/dashboard/savings",
+          Icon: PiggyBankIcon,
+          text: "Savings",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/loan-requests",
+          Icon: GroupSlackIcon,
+          text: "Loan Requests",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/whitelist",
+          Icon: UserCheckIcon,
+          text: "Whitelist",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/karma",
+          Icon: UserTimesIcon,
+          text: "Karma",
+          disabled: true,
+        },
       ],
     },
     {
       title: "BUSINESSES",
       items: [
-        { path: "/organization", Icon: BriefCaseIcon, text: "Organization" },
-        { path: "/loan-products", Icon: GroupSlackIcon, text: "Loan Products" },
         {
-          path: "/savings-products",
+          path: "/dashboard/organization",
+          Icon: BriefCaseIcon,
+          text: "Organization",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/loan-products",
+          Icon: GroupSlackIcon,
+          text: "Loan Products",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/savings-products",
           Icon: GroupHomeIcon,
           text: "Savings Products",
+          disabled: true,
         },
         {
-          path: "/fees-charges",
+          path: "/dashboard/fees-charges",
           Icon: CoinsSolidIcon,
           text: "Fees and Charges",
+          disabled: true,
         },
         {
-          path: "/transactions",
+          path: "/dashboard/transactions",
           Icon: ExportIcon,
           text: "Transactions",
+          disabled: true,
         },
         {
-          path: "/services",
+          path: "/dashboard/services",
           Icon: GalaxyIcon,
           text: "Services",
+          disabled: true,
         },
         {
-          path: "/service-account",
+          path: "/dashboard/service-account",
           Icon: UserCogIcon,
           text: "Service Account",
+          disabled: true,
         },
         {
-          path: "/settlements",
+          path: "/dashboard/settlements",
           Icon: ScrollIcon,
           text: "Settlements",
+          disabled: true,
         },
         {
-          path: "/reports",
+          path: "/dashboard/reports",
           Icon: ChartBarIcon,
           text: "Reports",
+          disabled: true,
         },
       ],
     },
     {
       title: "SETTINGS",
       items: [
-        { path: "/preferences", Icon: SlidersIcon, text: "Preferences" },
         {
-          path: "/fees-pricing",
-          Icon: BadgePercentIcon,
-          text: "Fees and Pricing",
+          path: "/dashboard/preferences",
+          Icon: SlidersIcon,
+          text: "Preferences",
+          disabled: true,
         },
         {
-          path: "/audit-log",
+          path: "/dashboard/fees-pricing",
+          Icon: BadgePercentIcon,
+          text: "Fees and Pricing",
+          disabled: true,
+        },
+        {
+          path: "/dashboard/audit-log",
           Icon: ClipBoardListIcon,
           text: "Audit Log",
+          disabled: true,
         },
       ],
     },
@@ -160,12 +228,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
               {section.title && (
                 <p className={styles.menu_header}>{section.title}</p>
               )}
-              {section.items.map(({ path, Icon, text, dropdown }) => (
+              {section.items.map(({ path, Icon, text, dropdown, disabled }) => (
                 <NavLink
                   key={path}
-                  to={path}
-                  className={linkClass}
-                  onClick={toggleSidebar}
+                  to={disabled ? "" : path} // Empty path prevents React Router issues
+                  className={({ isActive }) =>
+                    classNames(styles.nav_link, {
+                      [styles.active]: isActive && !disabled, // Only apply active if not disabled
+                      [styles.disabled]: disabled, // Apply disabled styles
+                    })
+                  }
+                  onClick={(e) => disabled && e.preventDefault()} // Prevents click for disabled items
                 >
                   <div className={styles.menu_item}>
                     <Icon />
@@ -177,6 +250,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
             </li>
           ))}
         </ul>
+
         <div className={styles.logout}>
           <Button variant="normal" onClick={handleLogout}>
             <LogoutIcon />

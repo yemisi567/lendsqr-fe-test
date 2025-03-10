@@ -1,0 +1,115 @@
+.pagination_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 4rem;
+
+  @media (max-width: 62.5em) {
+    justify-content: center;
+  }
+
+  .active_page {
+    background: var(--opaque-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .pagination_cta {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--bg-primary);
+
+    button:hover {
+      background: var(--opaque-bg);
+      transition: 0.3s;
+      padding: 0.5rem;
+      border-radius: 4px;
+
+      svg {
+        fill: var(
+          --color-white
+        ) !important; // Ensure the fill turns white on hover
+      }
+    }
+
+    button:first-child,
+    button:last-child {
+      background: var(--opaque-bg);
+      padding: 0.5rem;
+      border-radius: 4px;
+      color: var(--bg-primary);
+
+      &:hover {
+        background: var(--color-secondary);
+        color: var(--color-white);
+        transition: 0.3s;
+
+        svg {
+          fill: var(
+            --color-white
+          ) !important; // Change the icon fill to white on hover
+        }
+      }
+    }
+  }
+
+  p {
+    font-weight: var(--font-regular);
+    color: var(--bg-primary);
+  }
+
+  .current_detail {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    color: var(--color-secondary);
+    margin-inline: 1rem;
+    background: var(--opaque-bg);
+    height: 3rem;
+    width: 7rem;
+    padding: 0rem 0rem 0rem 1rem;
+    border-radius: 4px;
+  }
+  .count_container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .dropdown_wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dropdown_menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    z-index: 100;
+    padding: 5px 0;
+    list-style: none;
+
+    li {
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s ease-in-out;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+}

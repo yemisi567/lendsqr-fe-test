@@ -22,6 +22,10 @@
   --color-danger: #e4033b;
   --color-black: #0b132b;
   --color-white: #ffffff;
+  --color-text-primary: rgba(33, 63, 125, 1);
+  --color-text-secondary: rgba(84, 95, 125, 1);
+  --bg-primary: rgba(84, 95, 125);
+  --opaque-bg: rgba(33, 63, 125, 0.1);
   --font-family: "Manrope", sans-serif;
   --color-primary-opaque: var(--color-primary-opaque);
 
@@ -65,3 +69,24 @@ body {
   pointer-events: auto !important;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #fbfbfb;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #213f7d;
+  border-radius: 4px;
+}
