@@ -64,6 +64,7 @@ This starts the development server at http://localhost:5173
 ## Project Structure
 
 📂 src/
+
 - components (Reusable components (Pagination, Filters))
 - context/ (Auth & Users Context)
 - hooks/ (Custom hooks (useFilter, usePagination))
