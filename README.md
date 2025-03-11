@@ -38,7 +38,8 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 
 - Clone the Repository
 
-```$ git clone https://github.com/yemisi567/lendsqr-fe-test.git
+```
+   $ git clone https://github.com/yemisi567/lendsqr-fe-test.git
    $ cd lendsqr-dashboard
 ```
 
@@ -50,7 +51,8 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 
 - Create a _.env_ file in the project root and add the following:
 
-```VITE_MOCKY_URL=https://api.mocky.io
+```
+   VITE_MOCKY_URL=https://api.mocky.io
    VITE_AUTH_TOKEN=your_auth_token
    VITE_MOCKY_ID=mocky_id
 ```
@@ -63,8 +65,7 @@ This starts the development server at http://localhost:5173
 
 ## Project Structure
 
-📂 src/
-
+```src/
 - components (Reusable components (Pagination, Filters))
 - context/ (Auth & Users Context)
 - hooks/ (Custom hooks (useFilter, usePagination))
@@ -74,7 +75,7 @@ This starts the development server at http://localhost:5173
 - utils/ (Helper functions)
 - assets/ (Icons, images, and styles)
 - component.test.tsx (Unit & integration tests (Vitest))
-
+```
 ## Usage
 
 - User Authentication
