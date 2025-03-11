@@ -64,15 +64,15 @@ This starts the development server at http://localhost:5173
 ## Project Structure
 
 📂 src/
-- components/ # Reusable components (Pagination, Filters)
--  context/ # Auth & Users Context
--  hooks/ # Custom hooks (useFilter, usePagination)
--  ui/ # UI Elements (Buttons, Inputs, Popovers)
--  pages/ # Main app pages (Login, Dashboard, User Details)
-- types/ # TypeScript types/interfaces
-- utils/ # Helper functions
-- assets/ # Icons, images, and styles
-- component.test.tsx # Unit & integration tests (Vitest)
+- components (Reusable components (Pagination, Filters))
+- context/ (Auth & Users Context)
+- hooks/ (Custom hooks (useFilter, usePagination))
+- ui/ (UI Elements (Buttons, Inputs, Popovers))
+- pages/ (Main app pages (Login, Dashboard, User Details))
+- types/ (TypeScript types/interfaces)
+- utils/ (Helper functions)
+- assets/ (Icons, images, and styles)
+- component.test.tsx (Unit & integration tests (Vitest))
 
 ## Usage
 
