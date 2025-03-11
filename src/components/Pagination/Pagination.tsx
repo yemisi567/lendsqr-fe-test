@@ -109,7 +109,7 @@ const Pagination = ({
               variant="normal"
               key={i}
               onClick={() => handlePageChange(Number(p))}
-              className={p === page ? styles.active__page : ""}
+              className={p === page ? styles.active_page : styles.inactive_page}
             >
               {p}
             </Button>

@@ -24,8 +24,10 @@ const Filter = ({
     const formData = new FormData(e.target as HTMLFormElement);
 
     formData.forEach((value, key) => {
-      if (value && value !== "All") {
+      if (value && value !== "Select") {
         params.set(key, value as string);
+      } else {
+        params.delete(key);
       }
     });
 
@@ -47,7 +49,7 @@ const Filter = ({
         <FilterSelect
           label="Organization"
           name="company"
-          options={["All", ...companies]}
+          options={["Select", ...companies]}
         />
         {filterItems.map((input, index) => (
           <FilterInput key={index} {...input} />
@@ -55,7 +57,7 @@ const Filter = ({
         <FilterSelect
           label="Status"
           name="status"
-          options={["All", "Active", "Pending", "Blacklisted", "Inactive"]}
+          options={["Select", "Active", "Pending", "Blacklisted", "Inactive"]}
         />
         <div className={styles.filter_cta}>
           <button

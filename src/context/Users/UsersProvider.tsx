@@ -6,7 +6,7 @@ import { IUserDetails, UsersState } from "../../types/types";
 
 // Initial state
 const initialState: UsersState = {
-  users: null,
+  users: [],
   loading: false,
   error: null,
 };
@@ -17,7 +17,12 @@ const usersReducer = (state: UsersState, action: any): UsersState => {
     case "FETCH_START":
       return { ...state, loading: true, error: null };
     case "FETCH_SUCCESS":
-      return { ...state, loading: false, users: action.payload, error: null };
+      return {
+        ...state,
+        loading: false,
+        users: action.payload.users,
+        error: null,
+      };
     case "FETCH_ERROR":
       return { ...state, loading: false, error: action.payload };
     default:
@@ -39,7 +44,7 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({
     dispatch({ type: "FETCH_START" });
 
     try {
-      const { data } = await axios.get<IUserDetails[]>(MOCKY_URL, {
+      const { data } = await axios.get<{ users: IUserDetails[] }>(MOCKY_URL, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${AUTH_TOKEN}`,
@@ -57,7 +62,7 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   useEffect(() => {
-    fetchUsers(); // Fetch users on mount
+    fetchUsers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

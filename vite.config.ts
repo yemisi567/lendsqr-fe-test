@@ -9,21 +9,12 @@ export default defineConfig({
   plugins: [react()],
   test: {
     globals: true,
-    environment: "jsdom",
-    setupFiles: "./src/test/setup.ts",
-    env: {
-      VITE_NODE_ENV: "test",
-    },
+    environment: 'jsdom',
+    setupFiles: "./src/setupTests.ts",
+    include: ["src/**/*.test.{ts,tsx}", "src/**/*.spec.{ts,tsx}"], 
+    exclude: ["node_modules", "dist", "coverage", "src/vite-env.d.ts"],
     coverage: {
       provider: "istanbul",
-      include: ["src/**/*"],
-      exclude: [
-        "src/main.tsx",
-        "src/assets/",
-        "src/styles/",
-        "src/vite-env.d.ts",
-        "src/test/setup.ts",
-      ],
       reporter: ["text", "json", "html"],
       all: true,
       thresholds: {

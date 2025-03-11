@@ -1,16 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap");
 
 @font-face {
   font-family: "Avenir Next";
   src: url("/fonts/AvenirNext-Regular.otf") format("opentype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Avenir Next";
+  src: url("/fonts/AvenirNext-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "Avenir Next";
   src: url("/fonts/AvenirNext-Bold.otf") format("opentype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -26,16 +33,15 @@
   --color-text-secondary: rgba(84, 95, 125, 1);
   --bg-primary: rgba(84, 95, 125);
   --opaque-bg: rgba(33, 63, 125, 0.1);
-  --font-family: "Manrope", sans-serif;
-  --color-primary-opaque: var(--color-primary-opaque);
 
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
+  --roboto-font: "Roboto", sans-serif;
 
-  --font-family: "Work Sans", sans-serif;
+  --work-sans-font: "Work Sans", sans-serif;
 }
 
 *,
@@ -52,7 +58,7 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--work-sans-font);
   font-weight: var(--font-regular);
   color: var(--color-black);
   box-sizing: border-box;
@@ -89,4 +95,22 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #213f7d;
   border-radius: 4px;
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--font-regular);
+  font-family: "Avenir Next", sans-serif;
+  opacity: 0.5;
+}
+input,
+select,
+textarea {
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    border-color: var(--color-text-primary) !important;
+    outline: none;
+  }
 }

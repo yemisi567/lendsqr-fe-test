@@ -1,7 +1,6 @@
 import styles from "./Details.module.scss";
 import { IUserDetails } from "../../../types/types";
 import { EllipsisIcon } from "../../../Icons/Elipsis";
-import Button from "../../../ui/Button/Button";
 import { formatDate } from "../../../helpers/helper";
 import Popover from "../../../ui/Popover/Popover";
 import { useEffect, useRef } from "react";
@@ -53,18 +52,12 @@ const Details = ({ user, activePopover, setActivePopover }: IDetails) => {
           {user.status}
         </span>
       </td>
-      <td style={{ position: "relative", cursor: "pointer" }}>
-        <Button
-          variant="normal"
-          onClick={() => setActivePopover(isPopoverOpen ? null : user.id)}
-        >
-          <EllipsisIcon />
-        </Button>
-        {isPopoverOpen && (
-          <div ref={popoverRef}>
-            <Popover id={user.id} userDetails={user} />
-          </div>
-        )}
+      <td
+        style={{ position: "relative", cursor: "pointer" }}
+        onClick={() => setActivePopover(isPopoverOpen ? null : user.id)}
+      >
+        <EllipsisIcon />
+        {isPopoverOpen && <Popover id={user.id} userDetails={user} />}
       </td>
     </tr>
   );

@@ -76,16 +76,16 @@
       h1 {
         font-size: 4rem;
         font-weight: var(--font-bold);
-        color: var(--color-secondary);
-        letter-spacing: -0.2rem;
-        font-family: "Avenir Next", "Work Sans", sans-serif;
+        color: var(--color-text-primary);
+        letter-spacing: -4%;
+        font-family: "Avenir Next", sans-serif;
       }
 
       h2 {
         font-size: 2rem;
-        font-weight: normal;
-        color: var(--color-gray);
-        font-family: "Avenir Next", "Work Sans", sans-serif;
+        font-weight: var(--font-regular);
+        color: var(--color-text-secondary);
+        font-family: "Avenir Next", sans-serif;
       }
     }
   }
@@ -103,6 +103,7 @@
       font-weight: var(--font-semibold);
       letter-spacing: 2px;
       text-decoration: none;
+      font-family: "Avenir Next", sans-serif;
     }
   }
 }

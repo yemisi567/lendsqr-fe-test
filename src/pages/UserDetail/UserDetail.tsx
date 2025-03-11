@@ -1,4 +1,6 @@
+import UserProfile from "../../components/Users/UserProfile/UserProfile";
+
 const UserDetail: React.FC = () => {
-  return <div>UserDetail</div>;
+  return <UserProfile />;
 };
 export default UserDetail;

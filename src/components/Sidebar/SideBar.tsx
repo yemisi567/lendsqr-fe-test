@@ -231,14 +231,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
               {section.items.map(({ path, Icon, text, dropdown, disabled }) => (
                 <NavLink
                   key={path}
-                  to={disabled ? "" : path} // Empty path prevents React Router issues
+                  to={disabled ? "" : path}
                   className={({ isActive }) =>
                     classNames(styles.nav_link, {
-                      [styles.active]: isActive && !disabled, // Only apply active if not disabled
-                      [styles.disabled]: disabled, // Apply disabled styles
+                      [styles.active]: isActive && !disabled,
+                      [styles.disabled]: disabled,
+                      [styles.dropdown]: dropdown,
                     })
                   }
-                  onClick={(e) => disabled && e.preventDefault()} // Prevents click for disabled items
+                  onClick={(e) => disabled && e.preventDefault()}
                 >
                   <div className={styles.menu_item}>
                     <Icon />

@@ -9,10 +9,12 @@ export interface IUserDetails {
   username: string;
   BVN: string;
   name: string;
+  account_number: number;
+  bank_name: string;
   email: string;
   phone: string;
   date_joined: string;
-  status: string;
+  status: "Inactive" | "Pending" | "Active" | "Blacklisted";
   monthly_income: string;
   repayment: string;
   company: string;

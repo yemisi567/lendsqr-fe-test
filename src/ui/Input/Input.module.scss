@@ -7,16 +7,11 @@
   max-width: 447px;
   input {
     padding: 1rem;
-    border: 2px solid rgba(84, 95, 125, 0.15);
+    border: 1px solid rgba(84, 95, 125, 0.15);
     border-radius: 0.5rem;
     outline: none;
     height: 50px;
     width: 100%;
-    z-index: 10;
-
-    // @media (max-width: 768px) {
-    //   z-index: -1;
-    // }
   }
 
   .toggle_visibility {
@@ -28,6 +23,7 @@
     cursor: pointer;
     font-weight: var(--font-semibold);
     text-transform: uppercase;
+    font-family: "Avenir Next", sans-serif;
     @media (max-width: 768px) {
       right: 2rem;
     }
@@ -36,9 +32,5 @@
   .error_message {
     color: var(--color-danger);
     font-size: 1.2rem;
-  }
-
-  input::placeholder {
-    color: rgba(84, 95, 125, 0.3);
   }
 }

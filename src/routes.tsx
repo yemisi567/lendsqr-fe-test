@@ -26,7 +26,7 @@ const AppRoutes: React.FC = () => {
       >
         <Route index element={<Navigate to="users" />} />
         <Route path="users" element={<Users />} />
-        <Route path="user/:id" element={<UserDetail />} />
+        <Route path="users/:id" element={<UserDetail />} />
       </Route>
     </Routes>
   );

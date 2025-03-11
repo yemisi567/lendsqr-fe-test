@@ -87,7 +87,7 @@ const Login: React.FC = () => {
               }}
             />
             <Link to="/">FORGOT PASSWORD?</Link>
-            <Button type="submit" className={styles.button}>
+            <Button type="submit">
               LOG IN
             </Button>
           </form>

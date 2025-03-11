@@ -11,7 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({
-  type,
+  type = "text",
   name,
   error,
   onShowPassword,
@@ -20,7 +20,12 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={styles.form_input}>
-      <input name={name} {...props} className={classNames("", className)} />
+      <input
+        name={name}
+        type={type}
+        {...props}
+        className={classNames("", className)}
+      />
       {name === "password" && (
         <p className={styles.toggle_visibility} onClick={onShowPassword}>
           {type === "password" ? "SHOW" : "HIDE"}

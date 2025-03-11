@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { filtersArray } from "../../../constants/constants";
-import { useUsers } from "../../../context/Users/useUsers";
 import useFilter from "../../../hooks/useFilter";
 import usePagination from "../../../hooks/usePagination";
 import { FilterIcon } from "../../../Icons/Filter";
@@ -12,10 +11,14 @@ import Pagination from "../../Pagination/Pagination";
 import Details from "../Details/Details";
 import styles from "./Table.module.scss";
 
-const UsersTable: React.FC = () => {
+interface IUserTableProps {
+  users: IUserDetails[];
+  filteredUsers: IUserDetails[];
+}
+
+const UsersTable = ({ users, filteredUsers }: IUserTableProps) => {
   const [activePopover, setActivePopover] = useState<string | null>(null);
-  const { users, loading, error } = useUsers();
-  const { filteredUsers, handleShowFilter, showFilter, companies } = useFilter(
+  const { handleShowFilter, showFilter, companies } = useFilter(
     users as IUserDetails[]
   );
   const {
@@ -27,9 +30,6 @@ const UsersTable: React.FC = () => {
     page,
     pageSize,
   } = usePagination(filteredUsers?.length);
-
-  if (loading) return <p>Loading users...</p>;
-  if (error) return <p>{error}</p>;
 
   if (!filteredUsers?.length) {
     return (

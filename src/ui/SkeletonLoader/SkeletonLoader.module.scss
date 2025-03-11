@@ -1,0 +1,73 @@
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Skeleton Cards */
+.skeletonCards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media (max-width: 62.5em) {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}
+
+.skeletonCard {
+  width: 35rem;
+  height: 18rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  @media (max-width: 62.5em) {
+    width: 100%;
+  }
+}
+
+.skeletonTable {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.skeletonHeader {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skeletonColumn {
+  flex: 1;
+  height: 3rem;
+  border-radius: 4px;
+  background: #ddd;
+}
+
+.skeletonRow {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.skeletonCell {
+  flex: 1;
+  height: 2rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
