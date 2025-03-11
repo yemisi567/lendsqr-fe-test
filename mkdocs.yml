@@ -1,4 +1,6 @@
 site_name: Lendsqr Dashboard
+repo_url: https://github.com/yemisi567/lendsqr-fe-test.git
+
 theme:
   name: material
   palette:
@@ -26,7 +28,9 @@ extra:
       link: https://www.linkedin.com/in/mojisola-alegbe
   homepage: https://github.com/yemisi567/lendsqr-fe-test
   copyright: © 2025 <a href="https://github.com/yemisi567/lendsqr-fe-test" target="_blank" rel="noopener">Mojisola Alegbe</a> | All Rights Reserved
-
+plugins:
+  - search
+  - git-revision-date-localized
 nav:
   - Home: index.md
   - Getting Started:
