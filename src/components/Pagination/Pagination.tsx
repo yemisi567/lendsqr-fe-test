@@ -1,4 +1,4 @@
-import styles from "./pagination.module.scss";
+import styles from "./Pagination.module.scss";
 import usePagination from "../../hooks/usePagination";
 import { ChevronDownIcon } from "../../Icons/ChevronDown";
 import ChevronLeftIcon from "../../Icons/ChevronLeft";

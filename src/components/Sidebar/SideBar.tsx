@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
-import styles from "./Sidebar.module.scss";
+import styles from "./SideBar.module.scss";
 
 // Import Icons
 import { BriefCaseIcon } from "../../Icons/BriefCase";

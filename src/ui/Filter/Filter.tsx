@@ -1,5 +1,5 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import styles from "./filter.module.scss";
+import styles from "./Filter.module.scss";
 import { FormEvent, useMemo } from "react";
 import { FilterSelect } from "../../components/Filter/FilterSelect";
 import { filterItems } from "../../constants/constants";
@@ -44,7 +44,10 @@ const Filter = ({
   };
 
   return (
-    <section data-testid="filter-section" className={`${styles.filter} custom-scrollbar`}>
+    <section
+      data-testid="filter-section"
+      className={`${styles.filter} custom-scrollbar`}
+    >
       <form onSubmit={handleFilter}>
         <FilterSelect
           label="Organization"
