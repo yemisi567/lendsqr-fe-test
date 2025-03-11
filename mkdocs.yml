@@ -1,0 +1,44 @@
+site_name: Lendsqr Dashboard
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/toggle-switch-off-outline
+        text: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: lime
+      toggle:
+        icon: material/toggle-switch
+        text: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/favicon.ico
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yemisi567
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mojisola-alegbe
+  homepage: https://github.com/yemisi567/lendsqr-fe-test
+  copyright: © 2025 <a href="https://github.com/yemisi567/lendsqr-fe-test" target="_blank" rel="noopener">Mojisola Alegbe</a> | All Rights Reserved
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Project Structure: structure.md
+  - Features:
+      - Authentication: authentication.md
+      - User Management: user_management.md
+      - Pagination & Filtering: pagination_filtering.md
+  - Project Decisions: project_decisions.md
+  - Testing: testing.md
+  - Deployment: deployment.md
+  - Error Handling: error_boundary.md
+  - Contributing: contributing.md
+  - Contact: contact.md
