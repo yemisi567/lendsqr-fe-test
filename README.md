@@ -38,40 +38,41 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 
 - Clone the Repository
 
-`````$ git clone https://github.com/your-repo/user-management-dashboard.git
-   $ cd user-management-dashboard```
+```$ git clone https://github.com/your-repo/user-management-dashboard.git
+   $ cd user-management-dashboard
+```
 
 - Install Dependencies
 
-```$ npm install   # or yarn install```
+`$ npm install   # or yarn install`
 
 - Set Up Environment Variables
 
-- Create a *.env* file in the project root and add the following:
+- Create a _.env_ file in the project root and add the following:
 
 ```VITE_MOCKY_URL=https://api.mocky.io
 VITE_AUTH_TOKEN=your_auth_token
-VITE_MOCKY_ID=mocky_id```
+VITE_MOCKY_ID=mocky_id
+```
 
 - Run Development Server
 
-```$ npm run dev  # or yarn dev```
+`$ npm run dev  # or yarn dev`
 
 This starts the development server at http://localhost:5173
 
 ## Project Structure
 
 📂 src/
- ├── 📂 components/        # Reusable components (Pagination, Filters)
- ├── 📂 context/           # Auth & Users Context
- ├── 📂 hooks/             # Custom hooks (useFilter, usePagination)
- ├── 📂 ui/                # UI Elements (Buttons, Inputs, Popovers)
- ├── 📂 pages/             # Main app pages (Login, Dashboard, User Details)
- ├── 📂 types/             # TypeScript types/interfaces
- ├── 📂 utils/             # Helper functions
- ├── 📂 assets/            # Icons, images, and styles
- ├── 📂 component.test.tsx # Unit & integration tests (Vitest)  
-
+├── 📂 components/ # Reusable components (Pagination, Filters)
+├── 📂 context/ # Auth & Users Context
+├── 📂 hooks/ # Custom hooks (useFilter, usePagination)
+├── 📂 ui/ # UI Elements (Buttons, Inputs, Popovers)
+├── 📂 pages/ # Main app pages (Login, Dashboard, User Details)
+├── 📂 types/ # TypeScript types/interfaces
+├── 📂 utils/ # Helper functions
+├── 📂 assets/ # Icons, images, and styles
+├── 📂 component.test.tsx # Unit & integration tests (Vitest)
 
 ## Usage
 
@@ -96,12 +97,7 @@ Custom pagination for navigating large datasets.
 Filtering users based on multiple criteria.
 
 ## Running Tests
- Run All Tests
 
-```$ npm test  # or yarn test```
+Run All Tests
 
-Run Tests with Coverage
-````$ npm run test:coverage````
-
-
-`````
+`$ npm test  # or yarn test`
