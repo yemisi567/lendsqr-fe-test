@@ -7,6 +7,7 @@ import "./styles/globals.scss";
 import { AuthProvider } from "./context/Auth/AuthProvider";
 import { UsersProvider } from "./context/Users/UsersProvider";
 import { Toaster } from "sonner";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Toaster position="top-right" richColors />
       <AuthProvider>
         <UsersProvider>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </UsersProvider>
       </AuthProvider>
     </BrowserRouter>

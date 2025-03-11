@@ -59,7 +59,6 @@ const UsersTable = ({ users, filteredUsers }: IUserTableProps) => {
                     </div>
                   </th>
                 ))}
-                <th></th>
               </tr>
             </thead>
             <tbody>

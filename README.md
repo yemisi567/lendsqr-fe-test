@@ -47,7 +47,7 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 
 `$ npm install   # or yarn install`
 
-- Set Up Environment Variables
+# Set Up Environment Variables
 
 - Create a _.env_ file in the project root and add the following:
 
@@ -57,11 +57,11 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
    VITE_MOCKY_ID=mocky_id
 ```
 
-- Run Development Server
+#  Run Development Server
 
 `$ npm run dev  # or yarn dev`
 
-This starts the development server at http://localhost:5173
+This starts the development server at http://localhost:3000
 
 ## Project Structure
 
