@@ -2,7 +2,7 @@
 
 ## Overview
 
-The User Management Dashboard is a feature-rich, interactive web application for managing users, handling authentication, filtering, pagination, and more. Built with React (TypeScript), SCSS, React Router, and Vitest for testing, this dashboard provides seamless user experience and efficient data handling.
+The Lendsqr User Management Dashboard is a feature-rich, interactive web application for managing users, handling authentication, filtering, pagination, and more. Built with React (TypeScript), SCSS, React Router, and Vitest for testing, this dashboard provides seamless user experience and efficient data handling.
 
 ## Features
 
