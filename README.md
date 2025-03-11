@@ -75,6 +75,7 @@ This starts the development server at http://localhost:3000
 - utils/ (Helper functions)
 - assets/ (Icons, images, and styles)
 - component.test.tsx (Unit & integration tests (Vitest))
+- errorBoundary/ (Error Boundary Component (Handles crashes))
 ```
 ## Usage
 
