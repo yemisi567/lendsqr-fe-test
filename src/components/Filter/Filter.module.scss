@@ -10,22 +10,21 @@ form {
     gap: 4px;
 
     label {
-      font-size: 14px;
-      color: #4a4a4a;
+      font-size: 1.4rem;
+      color: var(--color-text-secondary);
     }
 
     input {
       width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
+      border: 1px solid var(--secondary-border);
+      border-radius: 8px;
+      font-size: 1.4rem;
       height: 4rem;
       padding: 0rem 1rem;
       color: var(--color-text-secondary);
-     
     }
     select {
-      border: 1px solid #d3d9e5;
+      border: 1px solid var(--secondary-border);
       border-radius: 8px;
       font-size: 1.4rem;
       color: var(--color-gray);
@@ -46,38 +45,29 @@ form {
   select:not(:has(option[value="Select"]:checked)) {
     color: var(--color-gray);
   }
-
   .date_picker {
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    border: 1px solid var(--secondary-border);
+    border-radius: 8px;
     background: white;
     cursor: pointer;
+    padding: 10px 12px;
+    width: 100%;
 
     .date_input {
       border: none;
       outline: none;
       flex-grow: 1;
-      font-size: 14px;
-      color: var(--color-text-secondary);
+      font-size: 1.4rem;
       background: transparent;
       cursor: pointer;
-      position: relative;
-      z-index: 2;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
       opacity: 0;
-
-      /* Ensures input is visible only when a date is selected */
-      &:focus,
-      &:valid {
-        opacity: 1;
-      }
-
-      /* Hide the default date picker icon */
-      &::-webkit-calendar-picker-indicator {
-        display: none;
-      }
     }
 
     /* Custom placeholder */
@@ -86,24 +76,26 @@ form {
       left: 12px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
+      font-size: 1.4rem;
       color: var(--color-text-secondary);
       pointer-events: none;
       transition: opacity 0.2s ease-in-out;
-      z-index: 1;
+      opacity: 0.5;
     }
 
     /* Hide the placeholder when a date is selected */
-    .date_input:valid + .placeholder {
-      opacity: 0;
+    .selected_date {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      color: var(--color-text-secondary);
     }
 
     .calendar_icon {
-      width: 18px;
-      height: 18px;
-      color: #666;
       cursor: pointer;
-      margin-right: 1rem;
+      margin-left: auto;
     }
   }
 

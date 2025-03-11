@@ -3,6 +3,7 @@ export interface ILoginDetails {
   email: string | null;
   password: string | null;
 }
+export type UserStatus = "Inactive" | "Pending" | "Active" | "Blacklisted"
 
 export interface IUserDetails {
   id: string;
@@ -14,7 +15,7 @@ export interface IUserDetails {
   email: string;
   phone: string;
   date_joined: string;
-  status: "Inactive" | "Pending" | "Active" | "Blacklisted";
+  status: UserStatus;
   monthly_income: string;
   repayment: string;
   company: string;
@@ -43,3 +44,4 @@ export interface UsersState {
   loading: boolean,
   error: string | null,
 }
+

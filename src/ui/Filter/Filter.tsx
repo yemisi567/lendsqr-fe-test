@@ -44,7 +44,7 @@ const Filter = ({
   };
 
   return (
-    <section className={`${styles.filter} custom-scrollbar`}>
+    <section data-testid="filter-section" className={`${styles.filter} custom-scrollbar`}>
       <form onSubmit={handleFilter}>
         <FilterSelect
           label="Organization"

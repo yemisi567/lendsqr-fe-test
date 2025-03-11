@@ -33,15 +33,17 @@
   --color-text-secondary: rgba(84, 95, 125, 1);
   --bg-primary: rgba(84, 95, 125);
   --opaque-bg: rgba(33, 63, 125, 0.1);
-
+  --box-shadow: rgba(0, 0, 0, 0.1);
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --roboto-font: "Roboto", sans-serif;
-
+  --parent-bg: #fbfbfb;
   --work-sans-font: "Work Sans", sans-serif;
+  --secondary-bg: rgba(255, 255, 255, 1);
+  --secondary-border: #d3d9e5;
 }
 
 *,
@@ -89,7 +91,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #fbfbfb;
+  background: var(--parent-bg);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -102,7 +104,7 @@ input::placeholder {
   font-size: 1.4rem;
   font-weight: var(--font-regular);
   font-family: "Avenir Next", sans-serif;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 input,
 select,

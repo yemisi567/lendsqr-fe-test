@@ -26,7 +26,6 @@ export const FilterInput = ({ name, type, label }: FilterInputProps) => {
       <label htmlFor={name}>{label}</label>
       {type === "date" ? (
         <div className={styles.date_picker} onClick={handleIconClick}>
-          {!selectedDate && <span className={styles.placeholder}>Date</span>}
           <input
             type="date"
             name={name}
@@ -34,8 +33,12 @@ export const FilterInput = ({ name, type, label }: FilterInputProps) => {
             value={selectedDate}
             onChange={handleDateChange}
             className={styles.date_input}
-    
           />
+          {/* Custom Displayed Date Text */}
+          {!selectedDate && <span className={styles.placeholder}>Date</span>}
+          {selectedDate && (
+            <span className={styles.selected_date}>{selectedDate}</span>
+          )}
           <img
             src="/assets/calendar.svg"
             alt="Calendar"

@@ -28,7 +28,6 @@ describe("Filter Component", () => {
       </MemoryRouter>
     );
 
-    //
     expect(screen.getByLabelText("Organization")).toBeInTheDocument();
     expect(screen.getByLabelText("Status")).toBeInTheDocument();
     expect(screen.getByText("Filter")).toBeInTheDocument();
@@ -104,7 +103,7 @@ describe("Filter Component", () => {
 
     fireEvent.click(screen.getByText("Filter"));
 
-    expect(mockNavigate).toHaveBeenCalledWith("/dashboard/users"); // ✅ Default page
+    expect(mockNavigate).toHaveBeenCalledWith("/dashboard/users");
   });
 
   //  Handles missing `companies` prop gracefully

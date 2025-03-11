@@ -55,6 +55,7 @@ const Details = ({ user, activePopover, setActivePopover }: IDetails) => {
       <td
         style={{ position: "relative", cursor: "pointer" }}
         onClick={() => setActivePopover(isPopoverOpen ? null : user.id)}
+        data-testid="ellipsis-icon"
       >
         <EllipsisIcon />
         {isPopoverOpen && <Popover id={user.id} userDetails={user} />}

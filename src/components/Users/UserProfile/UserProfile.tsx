@@ -34,7 +34,7 @@ const UserProfile = () => {
     },
     {
       name: "Loans",
-      component: <div className={styles.empty_tabs}>Loans</div>,
+      component: <div className={styles.empty_tabs}>Loan</div>,
     },
     {
       name: "Savings",

@@ -88,6 +88,7 @@ const Pagination = ({
           className={styles.pagination_cta_button}
           onClick={onHandlePrevious}
           disabled={page <= 1}
+          aria-label="Previous Page"
         >
           <ChevronLeftIcon />
         </Button>
@@ -121,6 +122,7 @@ const Pagination = ({
           className={styles.pagination_cta_button}
           onClick={onHandleNext}
           disabled={page >= Math.ceil(dataSize / pageSize)}
+          aria-label="Next Page"
         >
           <ChevronRightIcon />
         </Button>

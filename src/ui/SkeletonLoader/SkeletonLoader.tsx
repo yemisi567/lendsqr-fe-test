@@ -2,7 +2,7 @@ import styles from "./SkeletonLoader.module.scss";
 
 const SkeletonLoader = () => {
   return (
-    <div className={styles.skeletonContainer}>
+    <div className={styles.skeletonContainer} data-testid="skeleton-loader">
       {/* Top Cards Loader */}
       <div className={styles.skeletonCards}>
         {Array(4)

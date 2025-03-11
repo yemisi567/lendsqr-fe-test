@@ -40,8 +40,8 @@ const usePagination = (dataSize: number, defaultPageSize = 10) => {
   };
 
   const handleChangePageSize = (size: number) => {
-    params.set("pageSize", size.toString()); // ✅ Store pageSize in URL
-    params.set("page", "1"); // ✅ Reset to first page
+    params.set("pageSize", size.toString()); // Store pageSize in URL
+    params.set("page", "1"); // Reset to first page
     params.set("start", "0");
     params.set("end", Math.min(size, dataSize).toString());
     navigate(`?${params.toString()}`);
@@ -55,7 +55,7 @@ const usePagination = (dataSize: number, defaultPageSize = 10) => {
     start,
     end,
     page,
-    pageSize, // ✅ Now pageSize updates dynamically from searchParams
+    pageSize, // Now pageSize updates dynamically from searchParams
   };
 };
 

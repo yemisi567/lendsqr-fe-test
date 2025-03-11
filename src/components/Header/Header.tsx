@@ -21,7 +21,11 @@ const Header: React.FC<HeaderProps> = ({ isSidebarOpen, toggleSidebar }) => {
         <>
           <div className={styles.logo_container}>
             {/* <img src="/assets/in-app-logo.svg" alt="Logo" /> */}
-            <Button onClick={toggleSidebar} variant="normal">
+            <Button
+              onClick={toggleSidebar}
+              variant="normal"
+              data-testid="menu-button"
+            >
               <MenuIcon />
             </Button>
             <div className={styles.text}>Docs</div>
