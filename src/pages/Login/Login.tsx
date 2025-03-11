@@ -60,7 +60,7 @@ const Login: React.FC = () => {
           <form className={styles.form_container} onSubmit={handleSubmit}>
             <Input
               placeholder="Email"
-              type="email"
+           
               value={loginDetails.email as string}
               error={error.email && "Invalid email"}
               name="email"
