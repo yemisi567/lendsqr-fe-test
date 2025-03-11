@@ -1,54 +1,107 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The User Management Dashboard is a feature-rich, interactive web application for managing users, handling authentication, filtering, pagination, and more. Built with React (TypeScript), SCSS, React Router, and Vitest for testing, this dashboard provides seamless user experience and efficient data handling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Authentication**: Login functionality with validation.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **User Management**: List, filter, search, and manage users.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Pagination & Filtering**: Custom hooks for optimized filtering and pagination.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Responsive Sidebar & Navigation**: Interactive sidebar with role-based navigation.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Data Fetching**: Fetch and manage users using React Context API & Reducer.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **SCSS Styling**: Clean and reusable styling with variables.
+
+- **Unit & Integration Testing**: Covered with Vitest & React Testing Library.
+
+## Tech Stack
+
+- **Frontend**: React (TypeScript), React Router, SCSS (Modules)
+
+- **State Management**: React Context API & useReducer
+
+- **Testing**: Vitest, React Testing Library
+
+- **UI Components**: Custom reusable components
+
+## Installation & Setup
+
+### Prerequisites
+
+Ensure you have Node.js (v16+) and npm or yarn installed.
+
+- Clone the Repository
+
+`````$ git clone https://github.com/your-repo/user-management-dashboard.git
+   $ cd user-management-dashboard```
+
+- Install Dependencies
+
+```$ npm install   # or yarn install```
+
+- Set Up Environment Variables
+
+- Create a *.env* file in the project root and add the following:
+
+```VITE_MOCKY_URL=https://api.mocky.io
+VITE_AUTH_TOKEN=your_auth_token
+VITE_MOCKY_ID=mocky_id```
+
+- Run Development Server
+
+```$ npm run dev  # or yarn dev```
+
+This starts the development server at http://localhost:5173
+
+## Project Structure
+
+📂 src/
+ ├── 📂 components/        # Reusable components (Pagination, Filters)
+ ├── 📂 context/           # Auth & Users Context
+ ├── 📂 hooks/             # Custom hooks (useFilter, usePagination)
+ ├── 📂 ui/                # UI Elements (Buttons, Inputs, Popovers)
+ ├── 📂 pages/             # Main app pages (Login, Dashboard, User Details)
+ ├── 📂 types/             # TypeScript types/interfaces
+ ├── 📂 utils/             # Helper functions
+ ├── 📂 assets/            # Icons, images, and styles
+ ├── 📂 component.test.tsx # Unit & integration tests (Vitest)  
+
+
+## Usage
+
+- User Authentication
+
+Users can log in using their email and password.
+
+Authentication is managed using context & cookies.
+
+- User Management
+
+View a list of users fetched from an external API.
+
+Use filters (username, email, status, etc.) to search for users.
+
+Sort users based on various parameters.
+
+- Pagination & Filtering
+
+Custom pagination for navigating large datasets.
+
+Filtering users based on multiple criteria.
+
+## Running Tests
+ Run All Tests
+
+```$ npm test  # or yarn test```
+
+Run Tests with Coverage
+````$ npm run test:coverage````
+
+
+`````
