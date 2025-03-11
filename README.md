@@ -38,8 +38,8 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 
 - Clone the Repository
 
-```$ git clone https://github.com/your-repo/user-management-dashboard.git
-   $ cd user-management-dashboard
+```$ git clone https://github.com/yemisi567/lendsqr-fe-test.git
+   $ cd lendsqr-dashboard
 ```
 
 - Install Dependencies
@@ -51,8 +51,8 @@ Ensure you have Node.js (v16+) and npm or yarn installed.
 - Create a _.env_ file in the project root and add the following:
 
 ```VITE_MOCKY_URL=https://api.mocky.io
-VITE_AUTH_TOKEN=your_auth_token
-VITE_MOCKY_ID=mocky_id
+   VITE_AUTH_TOKEN=your_auth_token
+   VITE_MOCKY_ID=mocky_id
 ```
 
 - Run Development Server
@@ -64,37 +64,37 @@ This starts the development server at http://localhost:5173
 ## Project Structure
 
 📂 src/
-├── 📂 components/ # Reusable components (Pagination, Filters)
-├── 📂 context/ # Auth & Users Context
-├── 📂 hooks/ # Custom hooks (useFilter, usePagination)
-├── 📂 ui/ # UI Elements (Buttons, Inputs, Popovers)
-├── 📂 pages/ # Main app pages (Login, Dashboard, User Details)
-├── 📂 types/ # TypeScript types/interfaces
-├── 📂 utils/ # Helper functions
-├── 📂 assets/ # Icons, images, and styles
-├── 📂 component.test.tsx # Unit & integration tests (Vitest)
+- components/ # Reusable components (Pagination, Filters)
+-  context/ # Auth & Users Context
+-  hooks/ # Custom hooks (useFilter, usePagination)
+-  ui/ # UI Elements (Buttons, Inputs, Popovers)
+-  pages/ # Main app pages (Login, Dashboard, User Details)
+- types/ # TypeScript types/interfaces
+- utils/ # Helper functions
+- assets/ # Icons, images, and styles
+- component.test.tsx # Unit & integration tests (Vitest)
 
 ## Usage
 
 - User Authentication
 
-Users can log in using their email and password.
+  Users can log in using their email and password.
 
-Authentication is managed using context & cookies.
+  Authentication is managed using context & cookies.
 
 - User Management
 
-View a list of users fetched from an external API.
+  View a list of users fetched from an external API.
 
-Use filters (username, email, status, etc.) to search for users.
+  Use filters (username, email, status, etc.) to search for users.
 
-Sort users based on various parameters.
+- Sort users based on various parameters.
 
 - Pagination & Filtering
 
-Custom pagination for navigating large datasets.
+  Custom pagination for navigating large datasets.
 
-Filtering users based on multiple criteria.
+  Filtering users based on multiple criteria.
 
 ## Running Tests
 
