@@ -22,7 +22,6 @@ vi.mock("react-router-dom", async (importOriginal) => {
 
 
 describe("useFilter Hook", () => {
-  const searchQuery = "test";
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -75,19 +74,9 @@ describe("useFilter Hook", () => {
     expect(result.current.filteredUsers.length).toBe(2); 
   });
 
-  // Filters correctly by search query
-  it("filters users based on search query", () => {
-    const { result } = renderHook(() => useFilter(mockUsers, searchQuery), {
-      wrapper: MemoryRouter,
-    });
-
-    expect(result.current.filteredUsers.length).toBe(1);
-    expect(result.current.filteredUsers[0].email).toBe("test@example.com"); 
-  });
-
   // Handles empty users array gracefully
   it("returns an empty list if no users are provided", () => {
-    const { result } = renderHook(() => useFilter([], searchQuery), {
+    const { result } = renderHook(() => useFilter([]), {
       wrapper: MemoryRouter,
     });
 

@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import Filter from "./Filter";
 
-// Mock `useNavigate` to track navigation
+// Mock useNavigate to track navigation
 const mockNavigate = vi.fn();
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual<typeof import("react-router-dom")>(
@@ -20,7 +20,6 @@ describe("Filter Component", () => {
   const mockHandleShowFilter = vi.fn();
   const companies = ["Company A", "Company B"];
 
-  // Renders all form fields
   it("renders all filter form fields", () => {
     render(
       <MemoryRouter>
@@ -73,8 +72,7 @@ describe("Filter Component", () => {
     expect(mockHandleShowFilter).toHaveBeenCalled();
   });
 
-  // Ensures `handleShowFilter` is called after submission
-
+  // Ensures handleShowFilter is called after submission
   it("calls handleShowFilter after filtering", async () => {
     mockHandleShowFilter.mockClear();
 
@@ -106,7 +104,7 @@ describe("Filter Component", () => {
     expect(mockNavigate).toHaveBeenCalledWith("/dashboard/users");
   });
 
-  //  Handles missing `companies` prop gracefully
+  //  Handles missing companies prop gracefully
   it("renders without crashing when companies list is empty", () => {
     render(
       <MemoryRouter>

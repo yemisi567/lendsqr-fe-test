@@ -20,7 +20,6 @@ const Header: React.FC<HeaderProps> = ({ isSidebarOpen, toggleSidebar }) => {
       {!isSidebarOpen && (
         <>
           <div className={styles.logo_container}>
-            {/* <img src="/assets/in-app-logo.svg" alt="Logo" /> */}
             <Button
               onClick={toggleSidebar}
               variant="normal"

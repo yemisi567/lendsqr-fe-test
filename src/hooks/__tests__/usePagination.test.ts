@@ -22,7 +22,6 @@ describe("usePagination Hook", () => {
     const dataSize = 100;
     const defaultPageSize = 10;
    
-  
     beforeEach(() => {
       mockNavigate = vi.fn();
       vi.mock("react-router-dom", async (importOriginal) => {
@@ -69,8 +68,7 @@ describe("usePagination Hook", () => {
     act(() => {
       result.current.handleOnPrevious();
     });
-  
-    console.log("Mock navigate calls:", mockNavigate.mock.calls); 
+
   
     expect(mockNavigate).not.toHaveBeenCalled(); 
   })

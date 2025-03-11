@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  variant?: "normal" | "primary" | "secondary"; // Extend as needed
+  variant?: "normal" | "primary" | "secondary";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={classNames(
-        { [styles.button]: variant === "normal" }, 
+        { [styles.button]: variant === "normal" },
         { [styles.primary]: variant === "primary" },
         className
       )}

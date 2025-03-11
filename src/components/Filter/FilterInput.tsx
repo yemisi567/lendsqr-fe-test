@@ -34,7 +34,6 @@ export const FilterInput = ({ name, type, label }: FilterInputProps) => {
             onChange={handleDateChange}
             className={styles.date_input}
           />
-          {/* Custom Displayed Date Text */}
           {!selectedDate && <span className={styles.placeholder}>Date</span>}
           {selectedDate && (
             <span className={styles.selected_date}>{selectedDate}</span>

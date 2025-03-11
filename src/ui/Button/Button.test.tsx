@@ -11,7 +11,7 @@ describe("Button Component", () => {
     expect(button).toBeInTheDocument();
   });
 
-  // Applies correct class based on `variant`
+  // Applies correct class based on variant
   it("applies correct class for `primary` variant", () => {
     render(<Button variant="primary">Primary</Button>);
 
@@ -28,7 +28,7 @@ describe("Button Component", () => {
     expect(button.className).toMatch(/button/);
   });
 
-  // Calls `onClick` when clicked
+  // Calls onClick when clicked
   it("calls onClick when clicked", () => {
     const mockOnClick = vi.fn();
     render(<Button onClick={mockOnClick}>Click Me</Button>);
@@ -38,7 +38,7 @@ describe("Button Component", () => {
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
-  // Uses default `variant="primary"` when none is provided
+  // Uses default variant="primary" when none is provided
   it("uses primary variant by default", () => {
     render(<Button>Default</Button>);
 
@@ -47,7 +47,7 @@ describe("Button Component", () => {
     expect(button.className).toMatch(/primary/);
   });
 
-  //  Handles missing `onClick` gracefully
+  //  Handles missing onClick gracefully
   it("does not throw error if onClick is not provided", () => {
     render(<Button>Click Me</Button>);
 
@@ -56,7 +56,7 @@ describe("Button Component", () => {
     expect(() => fireEvent.click(button)).not.toThrow();
   });
 
-  //  Accepts additional props like `disabled`
+  //  Accepts additional props like disabled
   it("renders as disabled when `disabled` prop is passed", () => {
     render(<Button disabled>Disabled</Button>);
 

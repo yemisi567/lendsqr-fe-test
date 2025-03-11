@@ -43,7 +43,6 @@ describe("Header Component", () => {
       </MemoryRouter>
     );
 
-    // Select the menu button by test ID
     const menuButton = screen.getByTestId("menu-button");
     fireEvent.click(menuButton);
 
