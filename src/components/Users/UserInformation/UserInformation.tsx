@@ -1,9 +1,9 @@
-import { IUserDetails } from "../../../types/types";
+import { IUser } from "../../../types/types";
 import styles from "../Users.module.scss";
 import UserDetailItem from "../UserDetailItem/UserDetailItem";
 import UserDetailSection from "../UserDetailSection/UserDetailSection";
 
-const UserInformation = ({ user }: { user: IUserDetails }) => {
+const UserInformation = ({ user }: { user: IUser }) => {
   return (
     <>
       <UserDetailSection

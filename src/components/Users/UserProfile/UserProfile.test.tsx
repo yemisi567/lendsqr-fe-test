@@ -1,11 +1,11 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { MemoryRouter } from "react-router-dom";
-import { IUserDetails, UserStatus } from "../../../types/types";
+import { IUser, UserStatus } from "../../../types/types";
 import UserProfile from "./UserProfile";
 
 // Mock localStorage
-const mockUser: IUserDetails = {
+const mockUser: IUser = {
   id: "12324",
   name: "Sammie",
   email: "hello@domain.com",

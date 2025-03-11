@@ -1,12 +1,12 @@
 import styles from "./Details.module.scss";
-import { IUserDetails } from "../../../types/types";
+import { IUser } from "../../../types/types";
 import { EllipsisIcon } from "../../../Icons/Elipsis";
 import { formatDate } from "../../../helpers/helper";
 import Popover from "../../../ui/Popover/Popover";
 import { useEffect, useRef } from "react";
 
 interface IDetails {
-  user: IUserDetails;
+  user: IUser;
   activePopover: string | null;
   setActivePopover: React.Dispatch<React.SetStateAction<string | null>>;
 }

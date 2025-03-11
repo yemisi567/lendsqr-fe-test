@@ -2,7 +2,7 @@
 import { useReducer, useEffect } from "react";
 import axios from "axios";
 import { UsersContext } from "./UsersContext";
-import { IUserDetails, UsersState } from "../../types/types";
+import { IUser, UsersState } from "../../types/types";
 
 // Initial state
 const initialState: UsersState = {
@@ -44,7 +44,7 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({
     dispatch({ type: "FETCH_START" });
 
     try {
-      const { data } = await axios.get<{ users: IUserDetails[] }>(MOCKY_URL, {
+      const { data } = await axios.get<{ users: IUser[] }>(MOCKY_URL, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${AUTH_TOKEN}`,

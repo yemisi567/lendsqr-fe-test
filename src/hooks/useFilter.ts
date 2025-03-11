@@ -1,9 +1,9 @@
 import { useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { formatDate } from "../helpers/helper";
-import { IUserDetails } from "../types/types";
+import { IUser } from "../types/types";
 
-const useFilter = (users: IUserDetails[]) => {
+const useFilter = (users: IUser[]) => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchParams] = useSearchParams();
 

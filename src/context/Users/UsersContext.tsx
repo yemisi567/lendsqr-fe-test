@@ -1,8 +1,8 @@
 import { createContext } from "react";
-import { IUserDetails } from "../../types/types";
+import { IUser } from "../../types/types";
 
 interface UsersState {
-  users: IUserDetails[] | null;
+  users: IUser[] | null;
   loading: boolean;
   error: string | null;
   fetchUsers: () => void;

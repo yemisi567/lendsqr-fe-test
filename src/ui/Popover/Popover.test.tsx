@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { vi } from "vitest";
 import { describe, it, expect, beforeEach } from "vitest";
-import { MemoryRouter} from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import Popover from "./Popover";
-import { IUserDetails } from "../../types/types";
+import { IUser } from "../../types/types";
 
 let mockNavigate = vi.fn();
 
@@ -22,7 +22,7 @@ describe("Popover Component", () => {
     mockNavigate = vi.fn();
   });
 
-  const userDetails: IUserDetails = {
+  const userDetails: IUser = {
     id: "123",
     name: "John Doe",
     email: "johndoe@example.com",
@@ -102,7 +102,7 @@ describe("Popover Component", () => {
   it("renders without crashing when userDetails is empty", () => {
     render(
       <MemoryRouter>
-        <Popover id="123" userDetails={{} as IUserDetails} />
+        <Popover id="123" userDetails={{} as IUser} />
       </MemoryRouter>
     );
 

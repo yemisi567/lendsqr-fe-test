@@ -1,5 +1,5 @@
 import styles from "./Popover.module.scss";
-import { IUserDetails } from "../../types/types";
+import { IUser } from "../../types/types";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { BlackListUserIcon } from "../../Icons/BlackListUser";
@@ -9,7 +9,7 @@ import { JSX } from "react";
 
 interface PopoverProps {
   id: string;
-  userDetails: IUserDetails;
+  userDetails: IUser;
 }
 
 const PopoverItem = ({

@@ -3,7 +3,7 @@ import { filtersArray } from "../../../constants/constants";
 import useFilter from "../../../hooks/useFilter";
 import usePagination from "../../../hooks/usePagination";
 import { FilterIcon } from "../../../Icons/Filter";
-import { IUserDetails } from "../../../types/types";
+import { IUser } from "../../../types/types";
 import Button from "../../../ui/Button/Button";
 import Card from "../../../ui/Card/Card";
 import Filter from "../../../ui/Filter/Filter";
@@ -12,14 +12,14 @@ import Details from "../Details/Details";
 import styles from "./Table.module.scss";
 
 interface IUserTableProps {
-  users: IUserDetails[];
-  filteredUsers: IUserDetails[];
+  users: IUser[];
+  filteredUsers: IUser[];
 }
 
 const UsersTable = ({ users, filteredUsers }: IUserTableProps) => {
   const [activePopover, setActivePopover] = useState<string | null>(null);
   const { handleShowFilter, showFilter, companies } = useFilter(
-    users as IUserDetails[]
+    users as IUser[]
   );
   const {
     handleOnPrevious,
@@ -63,7 +63,7 @@ const UsersTable = ({ users, filteredUsers }: IUserTableProps) => {
               </tr>
             </thead>
             <tbody>
-              {filteredUsers?.slice(start, end).map((user: IUserDetails) => (
+              {filteredUsers?.slice(start, end).map((user: IUser) => (
                 <Details
                   key={user.id}
                   user={user}

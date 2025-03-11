@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { IUserDetails } from "../../../types/types";
+import { IUser } from "../../../types/types";
 import Tabs from "../../../ui/Tab/Tab";
 import UserInformation from "../UserInformation/UserInformation";
 import { BackIcon } from "../../../Icons/Back";
@@ -10,7 +10,7 @@ import { UserAvatarIcon } from "../../../Icons/UserAvatar";
 import Card from "../../../ui/Card/Card";
 
 const UserProfile = () => {
-  const [user, setUser] = useState<IUserDetails | null>(null);
+  const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -22,7 +22,7 @@ const UserProfile = () => {
   const TABS = [
     {
       name: "General Details",
-      component: <UserInformation user={user as IUserDetails} />,
+      component: <UserInformation user={user as IUser} />,
     },
     {
       name: "Documents",

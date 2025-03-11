@@ -5,7 +5,7 @@ export interface ILoginDetails {
 }
 export type UserStatus = "Inactive" | "Pending" | "Active" | "Blacklisted"
 
-export interface IUserDetails {
+export interface IUser {
   id: string;
   username: string;
   BVN: string;
@@ -40,7 +40,7 @@ export interface IUserDetails {
 }
 
 export interface UsersState {
-  users: IUserDetails[] | null,
+  users: IUser[] | null,
   loading: boolean,
   error: string | null,
 }

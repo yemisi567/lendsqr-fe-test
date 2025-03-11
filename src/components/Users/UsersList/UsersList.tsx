@@ -1,7 +1,7 @@
 import { CardDetails } from "../../../constants/constants";
 import { useUsers } from "../../../context/Users/useUsers";
 import useFilter from "../../../hooks/useFilter";
-import { IUserDetails } from "../../../types/types";
+import { IUser } from "../../../types/types";
 import Card from "../../../ui/Card/Card";
 import SkeletonLoader from "../../../ui/SkeletonLoader/SkeletonLoader";
 import UsersTable from "../Table/Table";
@@ -9,7 +9,7 @@ import styles from "./UsersList.module.scss";
 
 const UsersList: React.FC = () => {
   const { users, loading, error } = useUsers();
-  const { filteredUsers } = useFilter(users as IUserDetails[]);
+  const { filteredUsers } = useFilter(users as IUser[]);
 
   if (loading) return <SkeletonLoader />;
   if (error) return <p>{error}</p>;
@@ -29,8 +29,8 @@ const UsersList: React.FC = () => {
       </div>
       <div className={styles.table_wrapper}>
         <UsersTable
-          users={users as IUserDetails[]}
-          filteredUsers={filteredUsers as IUserDetails[]}
+          users={users as IUser[]}
+          filteredUsers={filteredUsers as IUser[]}
         />
       </div>
     </div>
